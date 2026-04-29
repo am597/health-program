@@ -454,7 +454,12 @@
 </div>
 
 <!-- QUIZ -->
-<div class="screen" id="quiz">
+<form name="quiz" method="POST" data-netlify="true" class="screen" id="quiz">
+  <input type="hidden" name="form-name" value="quiz">
+
+  <input type="hidden" name="score" id="scoreInput">
+  <input type="hidden" name="percentage" id="percentInput">
+
   <div class="quiz-header">
     <span class="q-counter" id="qCounter">Question 1 of 10</span>
     <div class="quiz-progress-bg">
@@ -466,10 +471,14 @@
     <div class="q-number-badge" id="qBadge">Q1 / 10</div>
     <div class="q-text" id="qText"></div>
     <div class="options" id="optionsList"></div>
+
     <div class="explanation" id="explanation"></div>
-    <button class="next-btn" id="nextBtn" onclick="nextQuestion()">Next Question →</button>
+
+    <button type="button" class="next-btn" id="nextBtn" onclick="nextQuestion()">Next Question →</button>
   </div>
-</div>
+
+  <button type="submit" id="finalSubmit" style="display:none;"></button>
+</form>
 
 <!-- RESULTS -->
 <div class="screen" id="results">
